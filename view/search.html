@@ -1,0 +1,39 @@
+<div ui-view="navbar"></div>
+
+<h1>Search</h1>
+
+<h3>Find any emergency phone immediately!</h3>
+
+<br />
+
+<form role="form" name="search" ng-submit="" novalidate>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-3">
+        <label for="country">Country:</label>
+      </div>
+      <div class="col-md-6">
+        <select name="country" id="country" ng-model="country" ng-required="true" class="form-control">
+          <option value="" disabled selected>Choose country</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-3">
+        <label for="emergency">Emergency:</label>
+      </div>
+      <div class="col-md-6">
+        <select name="emergency" id="emergency" ng-model="emergency" ng-required="true" class="form-control">
+          <option value="" disabled selected>Choose emergency</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-primary" type="submit">Search</button>
+
+</form>
