@@ -46,5 +46,40 @@
 
   });
 
+  $app->get("/country/emergency/{country}", function($request, $response, $args) {
+
+    try {
+
+      $db = getDB();
+
+      $statement = $db->prepare("SELECT Type, Number, LastUpdate FROM emergencyphonenumbers WHERE name = :country");
+
+      $statement->bindParam(":country", $args["country"], PDO::PARAM_STR);
+
+      $statement->execute();
+
+      $emergencyPhoneNumbers = array();
+
+      while($emergencyPhoneNumber = $statement->fetch(PDO::PARAM_STR)) {
+
+        array_push($emergencyPhoneNumbers, $emergencyPhoneNumber);
+
+      }
+
+      $newResponse = $response->withHeader("Content-type", "application/json");
+      $newResponse = $newResponse->withJSON($emergencyPhoneNumbers);
+
+      return $newResponse;
+
+
+    } catch (PDOException $e) {
+
+      $newResponse = $response->withStatus(500);
+      return $newResponse;
+
+    }
+
+  });
+
 
   $app->run();
