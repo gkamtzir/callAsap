@@ -20,6 +20,40 @@
 
   $app = new \Slim\App();
 
+  $app->get("/country", function($request, $response, $args) {
+
+    try {
+
+      $db = getDB();
+
+      $statement = $db->prepare("SELECT * FROM countries");
+
+      $statement->execute();
+
+      $countries = array();
+
+      while($country = $statement->fetch(PDO::FETCH_OBJ)) {
+
+        array_push($countries, $country);
+
+      }
+
+      $newResponse = $response->withStatus(200);
+      $newResponse = $newResponse->withHeader("Content-type", "application/json");
+      $newResponse = $newResponse->withJSON($countries);
+
+      return $newResponse;
+
+
+    } catch (PDOException $e) {
+
+      $newResponse = $response->withStatus(500);
+      return $newResponse;
+
+    }
+
+  });
+
   $app->get("/country/{country}", function($request, $response, $args) {
 
     try {
@@ -28,7 +62,7 @@
 
       $statement = $db->prepare("SELECT * FROM countries WHERE name = :country");
 
-      $statement->bindParam(":country", $args["country"], PDO::PARAM_STR);
+      $statement->bindParam(":country", ucfirst(strtolower($args["country"])), PDO::PARAM_STR);
 
       $statement->execute();
 
@@ -54,7 +88,7 @@
 
       $statement = $db->prepare("SELECT Type, Number, LastUpdate FROM emergencyphonenumbers WHERE name = :country");
 
-      $statement->bindParam(":country", $args["country"], PDO::PARAM_STR);
+      $statement->bindParam(":country", ucfirst(strtolower($args["country"])), PDO::PARAM_STR);
 
       $statement->execute();
 
