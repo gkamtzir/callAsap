@@ -66,7 +66,8 @@
 
       $statement->execute();
 
-      $newResponse = $response->withHeader("Content-type", "application/json");
+      $newResponse = $response->withStatus(200);
+      $newResponse = $newResponse->withHeader("Content-type", "application/json");
       $newResponse = $newResponse->withJSON($statement->fetch(PDO::FETCH_OBJ));
 
       return $newResponse;
@@ -100,7 +101,8 @@
 
       }
 
-      $newResponse = $response->withHeader("Content-type", "application/json");
+      $newResponse = $response->withStatus(200);
+      $newResponse = $newResponse->withHeader("Content-type", "application/json");
       $newResponse = $newResponse->withJSON($emergencyPhoneNumbers);
 
       return $newResponse;
