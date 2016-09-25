@@ -30,14 +30,14 @@ paths:
               $ref: "#/definitions/country"
         500:
           description: Default error
-  /country/:country:
+  /country/{country}:
     get:
       summary: Returns basic information for a specified country
       description: |
         This URI is responsible for returning basic information for a specified country
       parameters:
         - name: country
-          in: query
+          in: path
           description: Country's name
           required: true
           type: string
@@ -72,14 +72,14 @@ paths:
                   The value is "yes" when 112 is the only emergency number in the country. Otherwise, the value is "no"
         500:
           description: Default error
-  /country/emergency/:country:
+  /country/emergency/{country}:
     get:
       summary: Returns all the availabe emergency phone numbers for a specified country
       description: |
         This URI is responsible for returning all the availabe emergency phone numbers of a specified country
       parameters:
         - name: country
-          in: query
+          in: path
           description: Country's name
           required: true
           type: string

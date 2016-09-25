@@ -34,14 +34,14 @@
                 }
             }
         },
-        "/country/:country": {
+        "/country/{country}": {
             "get": {
                 "summary": "Returns basic information for a specified country",
                 "description": "This URI is responsible for returning basic information for a specified country\n",
                 "parameters": [
                     {
                         "name": "country",
-                        "in": "query",
+                        "in": "path",
                         "description": "Country's name",
                         "required": true,
                         "type": "string"
@@ -90,14 +90,14 @@
                 }
             }
         },
-        "/country/emergency/:country": {
+        "/country/emergency/{country}": {
             "get": {
                 "summary": "Returns all the availabe emergency phone numbers for a specified country",
                 "description": "This URI is responsible for returning all the availabe emergency phone numbers of a specified country\n",
                 "parameters": [
                     {
                         "name": "country",
-                        "in": "query",
+                        "in": "path",
                         "description": "Country's name",
                         "required": true,
                         "type": "string"
