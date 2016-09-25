@@ -33,6 +33,62 @@
                     }
                 }
             }
+        },
+        "/country/:country": {
+            "get": {
+                "summary": "Returns basic information for a specified country",
+                "description": "This URI is responsible for return basic information for a specified country\n",
+                "parameters": [
+                    {
+                        "name": "country",
+                        "in": "query",
+                        "description": "Country's name",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An object with some basic info about a specified country",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "ID": {
+                                    "type": "string",
+                                    "description": "Country's unique ID"
+                                },
+                                "Name": {
+                                    "type": "string",
+                                    "description": "Country's name"
+                                },
+                                "Languages": {
+                                    "type": "string",
+                                    "description": "Available languages (seperated by commas)"
+                                },
+                                "Responsiveness": {
+                                    "type": "string",
+                                    "description": "How fast the calls are answered in seconds"
+                                },
+                                "LastUpdate": {
+                                    "type": "string",
+                                    "description": "Last time data were modified"
+                                },
+                                "SimNeeded112": {
+                                    "type": "string",
+                                    "description": "The value is \"yes\" when sim is needed in order to make a call using 112. Otherwise, the value is \"no\"\n"
+                                },
+                                "OnlyNumber": {
+                                    "type": "string",
+                                    "description": "The value is \"yes\" when 112 is the only emergency number in the country. Otherwise, the value is \"no\"\n"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Default error"
+                    }
+                }
+            }
         }
     },
     "definitions": {
