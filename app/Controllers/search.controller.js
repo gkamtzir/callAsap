@@ -7,8 +7,6 @@
 
   function SearchController($scope, $state){
 
-    $scope.contact = "Contact Page";
-
     $scope.$state = $state;
 
   }
