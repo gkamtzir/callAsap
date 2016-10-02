@@ -6,21 +6,61 @@
 
 <br />
 
-<form role="form" name="search" ng-submit="" novalidate>
-
-  <div class="form-group">
-    <div class="row">
-      <div class="col-md-3">
-        <label for="country">Country:</label>
-      </div>
-      <div class="col-md-6">
-        <select name="country" id="country" ng-model="country" ng-required="true" class="form-control">
-          <option value="" disabled selected>Choose country</option>
-        </select>
-      </div>
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-3">
+      <label for="country">Country:</label>
+    </div>
+    <div class="col-md-6">
+      <select ng-options="option.Name for option in countries track by option.ID" name="country" id="country" ng-model="country" ng-required="true" class="form-control">
+        <option value="" disabled selected>Choose country</option>
+      </select>
     </div>
   </div>
+</div>
 
-  <button class="btn btn-primary" type="submit">Search</button>
+<br /><br />
 
-</form>
+<div ng-show="country">
+  <h3>General information about <u>{{ country.Name }}</u></h3>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td><b>Languages</b></td>
+        <td><b>Responsiveness (in seconds)</b></td>
+        <td><b>Sim needed for 112 calls</b></td>
+        <td><b>112 only number</b></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ country.Languages == "undefined" ? "---" : country.Languages}}</td>
+        <td>{{ country.Responsiveness == "undefined" ? "---" : country.Responsiveness}}</td>
+        <td>{{ country.SimNeeded112 == "undefined" ? "---" : country.SimNeeded112}}</td>
+        <td>{{ country.OnlyNumber == "undefined" ? "---" : country.OnlyNumber}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div ng-if="country.OnlyNumber == 'no'">
+    <h3>Emergency phone numbers</h3>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <td><b>Emergency Type</b></td>
+          <td><b>Phone Number</b></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="emergency in emergencies">
+          <td>{{ emergency.Type }}</td>
+          <td>{{ emergency.Number }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div ng-if="country.OnlyNumber == 'yes'">
+    <h3>The only emergency phone number for this country is 112</h3>
+  </div>
+</div>

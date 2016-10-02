@@ -1,29 +1,36 @@
 (function(){
+  "use strict";
 
-angular.module("app")
-  .factory("serviceFactory", serviceFactory);
+  angular.module("callAsap")
+    .factory("searchFactory", searchFactory);
 
-  serviceFactory.$inject = ["$scope", "$http"];
+    searchFactory.$inject = ["$http"];
 
-  function serviceFactory($scope, $http) {
+    function searchFactory($http) {
 
-    return {
+      return {
 
-      getCountry: function(country) {
+        getCountries: function() {
 
-        return $http.get("api.php/country/" + country);
+          return $http.get("api.php/country");
 
-      },
+        },
 
-      getEmergencyPhoneNumbers: function(country) {
+        getCountry: function(country) {
 
-        return $http.get("api.php/country/emergency/" + country);
+          return $http.get("api.php/country/" + country);
+
+        },
+
+        getEmergencyPhoneNumbers: function(country) {
+
+          return $http.get("api.php/country/emergency/" + country);
+
+        }
 
       }
 
     }
-
-  }
 
 
 })();
