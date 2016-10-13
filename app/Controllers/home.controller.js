@@ -7,8 +7,6 @@
 
   function HomeController($scope, $state, homeFactory, searchFactory){
 
-    $scope.state = "Home Page";
-
     $scope.ip = "";
     $scope.country = "";
 

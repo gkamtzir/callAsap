@@ -7,8 +7,6 @@
 
   function AboutUsController($scope, $state){
 
-    $scope.aboutUs = "AboutUs Page";
-
     $scope.$state = $state;
 
   }
