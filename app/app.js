@@ -10,7 +10,7 @@
         .state("home", {
           url: "/",
           views: {
-            "": {templateUrl: "view/home.html",
+            "": {templateUrl: "view/home.php",
                 controller: "HomeController"
             },
             "navbar@home": {templateUrl: "view/navbar.html"}
