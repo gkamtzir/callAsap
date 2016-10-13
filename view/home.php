@@ -8,7 +8,7 @@
 
 <div ng-show="error == false">
 
-  {{ country }}
+  <div ui-view="country"></div>
 
 </div>
 

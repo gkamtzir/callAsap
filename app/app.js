@@ -13,7 +13,8 @@
             "": {templateUrl: "view/home.php",
                 controller: "HomeController"
             },
-            "navbar@home": {templateUrl: "view/navbar.html"}
+            "navbar@home": {templateUrl: "view/navbar.html"},
+            "country@home": {templateUrl: "view/country.html"}
           }
 
         })
@@ -24,7 +25,8 @@
             "": {templateUrl: "view/search.html",
                 controller: "SearchController"
             },
-            "navbar@search": {templateUrl: "view/navbar.html"}
+            "navbar@search": {templateUrl: "view/navbar.html"},
+            "country@search": {templateUrl: "view/country.html"}
           }
         })
 
