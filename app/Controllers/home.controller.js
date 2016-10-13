@@ -29,6 +29,19 @@
 
               $scope.country = response.data;
 
+                searchFactory.getEmergencyPhoneNumbers($scope.response.country)
+                  .then(function(response) {
+
+                    $scope.emergencies = response.data;
+
+                  },
+                    function(response){
+
+                      $scope.error = response.data;
+
+                }
+              );
+
             },
               function(response){
 
