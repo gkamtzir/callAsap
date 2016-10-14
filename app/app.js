@@ -22,7 +22,7 @@
         .state("search", {
           url: "/search",
           views: {
-            "": {templateUrl: "view/search.html",
+            "": {templateUrl: "view/search.php",
                 controller: "SearchController"
             },
             "navbar@search": {templateUrl: "view/navbar.html"},
@@ -33,7 +33,7 @@
         .state("aboutUs", {
           url: "/aboutUs",
           views: {
-            "": {templateUrl: "view/aboutUs.html",
+            "": {templateUrl: "view/aboutUs.php",
                 controller: "AboutUsController"
             },
             "navbar@aboutUs": {templateUrl: "view/navbar.html"}
