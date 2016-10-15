@@ -39,6 +39,7 @@
       }
 
       $newResponse = $response->withStatus(200);
+      $newResponse = $newResponse->withHeader('Access-Control-Allow-Origin', '*');
       $newResponse = $newResponse->withHeader("Content-type", "application/json");
       $newResponse = $newResponse->withJSON($countries);
 
@@ -67,6 +68,7 @@
       $statement->execute();
 
       $newResponse = $response->withStatus(200);
+      $newResponse = $newResponse->withHeader('Access-Control-Allow-Origin', '*');
       $newResponse = $newResponse->withHeader("Content-type", "application/json");
       $newResponse = $newResponse->withJSON($statement->fetch(PDO::FETCH_OBJ));
 
@@ -102,6 +104,7 @@
       }
 
       $newResponse = $response->withStatus(200);
+      $newResponse = $newResponse->withHeader('Access-Control-Allow-Origin', '*');
       $newResponse = $newResponse->withHeader("Content-type", "application/json");
       $newResponse = $newResponse->withJSON($emergencyPhoneNumbers);
 
