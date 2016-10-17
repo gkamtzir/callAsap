@@ -29,6 +29,8 @@
 
               $scope.country = response.data;
 
+              if($scope.country){
+
                 searchFactory.getEmergencyPhoneNumbers($scope.response.country)
                   .then(function(response) {
 
@@ -39,8 +41,14 @@
 
                       $scope.error = response.data;
 
-                }
-              );
+                    }
+                );
+
+              } else {
+
+                $scope.error = "Sorry. We don't have any information about your country's emergency phones.";
+
+              }
 
             },
               function(response){

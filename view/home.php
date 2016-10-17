@@ -14,6 +14,6 @@
 
 <div ng-show="error">
 
-  <h1>Error.</h1>
+  <h1>{{ error }}</h1>
 
 </div>
