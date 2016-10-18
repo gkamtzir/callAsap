@@ -2,3 +2,20 @@ body {
   background-image: url("../extra/background.jpg");
   text-align: center;
 }
+
+.container {
+  background-image: url("../extra/container-background.jpg");
+  border-radius: 5px;
+  height: 100%;
+  margin: 2% auto;
+  padding: 2% 2%;
+}
+
+.navbar {
+  background-color: black;
+  padding: auto 50%;
+}
+
+.navbar-brand {
+  font-size: 24px;
+}
