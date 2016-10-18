@@ -1,19 +1,23 @@
 <div ui-view="navbar"></div>
 
-<h1>Home</h1>
+<div class="container">
 
-<input type="hidden" ng-init="ip='<?php echo $_SERVER['REMOTE_ADDR']; ?>'">
+  <h1>Home</h1>
 
-<h3>Your IP: {{ip}}</h3>
+  <input type="hidden" ng-init="ip='<?php echo $_SERVER['REMOTE_ADDR']; ?>'">
 
-<div ng-show="error == false">
+  <h3>Your IP: {{ip}}</h3>
 
-  <div ui-view="country"></div>
+  <div ng-show="error == false">
 
-</div>
+    <div ui-view="country"></div>
 
-<div ng-show="error">
+  </div>
 
-  <h1>{{ error }}</h1>
+  <div ng-show="error">
+
+    <h1>{{ error }}</h1>
+
+  </div>
 
 </div>
