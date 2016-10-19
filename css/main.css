@@ -12,6 +12,10 @@ nav li a {
   border-radius: 17px;
 }
 
+button span {
+  color: white;
+}
+
 .container {
   background-image: url("../extra/container-background.jpg");
   border-radius: 5px;
@@ -23,6 +27,7 @@ nav li a {
 .navbar {
   background-color: black;
   padding: auto 50%;
+  margin: auto;
 }
 
 .navbar-brand {
