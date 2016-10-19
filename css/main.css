@@ -4,6 +4,14 @@ body {
   font-family: 'Merriweather', serif;
 }
 
+nav li a {
+  margin:10px;
+  float: right;
+  -webkit-border-radius: 17px;
+  -moz-border-radius: 17px;
+  border-radius: 17px;
+}
+
 .container {
   background-image: url("../extra/container-background.jpg");
   border-radius: 5px;
@@ -19,4 +27,17 @@ body {
 
 .navbar-brand {
   font-size: 24px;
+  margin: 10px;
+}
+
+.icon {
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  vertical-align: middle;
+  margin: 0 1px 8px;
+  -webkit-border-radius: 17px;
+  -moz-border-radius: 17px;
+  border-radius: 17px;
+  margin:10px;
 }
