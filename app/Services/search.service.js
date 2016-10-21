@@ -12,19 +12,19 @@
 
         getCountries: function() {
 
-          return $http.get("api.php/country");
+          return $http.get("http://83.212.115.201/api.php/country");
 
         },
 
         getCountry: function(country) {
 
-          return $http.get("api.php/country/" + country);
+          return $http.get("http://83.212.115.201/api.php/country/" + country);
 
         },
 
         getEmergencyPhoneNumbers: function(country) {
 
-          return $http.get("api.php/country/emergency/" + country);
+          return $http.get("http://83.212.115.201/api.php/country/emergency/" + country);
 
         }
 
