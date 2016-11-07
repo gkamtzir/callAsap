@@ -2,7 +2,7 @@
 
 <div class="container">
 
-  <h1>Home</h1>
+  <h1>What are you waiting for?</h1>
 
   <input type="hidden" ng-init="ip='<?php echo $_SERVER['REMOTE_ADDR']; ?>'">
 
