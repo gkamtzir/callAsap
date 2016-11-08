@@ -1,3 +1,4 @@
+<?php include_once("analyticstracking.php") ?>
 <div ui-view="navbar"></div>
 
 <div class="container">

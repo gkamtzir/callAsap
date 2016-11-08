@@ -1,7 +1,8 @@
+<?php include_once("analyticstracking.php") ?>
 <div ui-view="navbar"></div>
 
 <div class="container">
-  
+
   <h1>Search</h1>
 
   <h3>Find any emergency phone immediately!</h3>
