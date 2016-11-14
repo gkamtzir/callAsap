@@ -5,7 +5,7 @@
 
   <h1>SEARCH</h1>
 
-  <h3>Find any emergency phone immediately.</h3>
+  <h4>Find any emergency phone immediately.</h4>
 
   <br />
 
@@ -22,7 +22,7 @@
     </div>
   </div>
 
-  <br /><br />
+  <hr />
 
   <div ui-view="country"></div>
 
