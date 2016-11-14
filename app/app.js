@@ -30,13 +30,13 @@
           }
         })
 
-        .state("aboutUs", {
-          url: "/aboutUs",
+        .state("about", {
+          url: "/about",
           views: {
-            "": {templateUrl: "view/aboutUs.php",
-                controller: "AboutUsController"
+            "": {templateUrl: "view/about.php",
+                controller: "AboutController"
             },
-            "navbar@aboutUs": {templateUrl: "view/navbar.html"}
+            "navbar@about": {templateUrl: "view/navbar.html"}
           }
         });
 
