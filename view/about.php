@@ -3,12 +3,12 @@
 
 <div class="container">
 
-  <h1>About</h1>
+  <h1>ABOUT</h1>
   <br />
   <p>
     Each year, more than 500 million people visit Europe.
     Characterized by stunning scenery in most of its countries,
-    Europe is the mother of literature, music, art and philosophy: a seemingly perfect destination for permanent residence – even more so when its organized workplaces are taken into account.
+    Europe is also the mother of literature, music, art and philosophy: a seemingly perfect destination for permanent residence – even more so when its organized workplaces are taken into account.
   </p>
   <br />
   <p>
@@ -18,7 +18,7 @@
   </p>
   <br />
   <p>
-    Here in <b>callasap</b>, we have gathered every emergency phone number you may need.
+    Here in <b>CallAsap</b>, we have gathered every emergency phone number you may need.
   </p>
 
 </div>
