@@ -7,8 +7,6 @@
 
   <input type="hidden" ng-init="ip='<?php echo $_SERVER['REMOTE_ADDR']; ?>'">
 
-  <h4>Your IP: {{ip}}</h4>
-
   <div ng-show="error == false">
 
     <div ui-view="country"></div>
