@@ -1,11 +1,15 @@
 <div ng-show="country">
-  <h3>General information about <b>{{ country.Name | uppercase}}</b></h3>
-
+  <h3>General information about <b>{{ country.Name | uppercase}}</b><img ng-src="extra/flagIcons/{{ country.Name | lowercase}}.png" width="54" height="40" /></h3>
   <table class="table table-hover">
     <thead>
       <tr>
         <td><b>Languages</b></td>
-        <td><b>Responsiveness (in seconds)</b></td>
+        <td><b>Responsiveness</b>
+          <div class="tooltipCore">
+							<span class="glyphicon glyphicon-info-sign"></span>
+							<div class="tooltipText">Time (in seconds) in which the call is answered</div>
+				</div>
+        </td>
         <td><b>Sim needed for 112 calls</b></td>
         <td><b>112 only number</b></td>
       </tr>
