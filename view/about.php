@@ -12,7 +12,7 @@
   </p>
   <p>
     <i>Safety first</i>, as they say; a phrase more than applicable in Europe.
-    Each country has its own unique emergency numbers, while at the same time there is a single 3-digit phone number (112) available everywhere in Europe.
+    Each country has its own unique emergency numbers, while at the same time there is a single 3-digit phone number (112) available <i>everywhere</i> in Europe.
     All calls are given immediate response and answered in a variety of languages, depending on the country.
   </p>
   <h3><b>What is CallAsap?</b></h3>
