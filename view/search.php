@@ -15,7 +15,7 @@
         <label for="country">Country:</label>
       </div>
       <div class="col-md-6">
-        <select ng-options="option.Name for option in countries track by option.ID" name="country" id="country" ng-model="country" ng-required="true" class="form-control">
+        <select ng-options="option.Name for option in countries | orderBy: 'Name' track by option.ID" name="country" id="country" ng-model="country" ng-required="true" class="form-control">
           <option value="" disabled selected>Choose country</option>
         </select>
       </div>
