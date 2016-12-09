@@ -1,0 +1,22 @@
+{
+  "name": "callasap",
+  "version": "1.0.0",
+  "description": "Find the emergency phone number you need ASAP.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gkamtzir/callAsap.git"
+  },
+  "author": "George Kamtziridis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gkamtzir/callAsap/issues"
+  },
+  "homepage": "https://github.com/gkamtzir/callAsap#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
