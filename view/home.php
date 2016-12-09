@@ -4,7 +4,7 @@
 <div class="container">
 
   <h1>What is your emergency?</h1>
-
+  <loading></loading>
   <input type="hidden" ng-init="ip='<?php echo $_SERVER['REMOTE_ADDR']; ?>'">
 
   <div ng-show="error == false">
