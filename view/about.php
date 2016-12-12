@@ -4,7 +4,7 @@
 <div class="container">
 
   <h1>ABOUT</h1>
-  
+
   <br />
   <p>
     Each year, more than 500 million people visit Europe.
@@ -23,6 +23,10 @@
   </p>
   <p>
     We have also designed our own API from scratch, which is publicly available <a href="http://83.212.115.201/api">here</a> and can be freely used.
+  </p>
+  <br />
+  <p class="feedback">
+    <b>For every question or comment you may have, you can reach us at: gkamtzir@it.auth.gr</b>
   </p>
 
 </div>
