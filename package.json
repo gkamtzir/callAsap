@@ -18,5 +18,8 @@
   "homepage": "https://github.com/gkamtzir/callAsap#readme",
   "devDependencies": {
     "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "angular": "^1.6.0"
   }
 }
