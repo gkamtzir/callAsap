@@ -4,9 +4,9 @@
   angular.module("callAsap")
     .controller("SearchController", SearchController);
 
-  SearchController.$inject = ["$scope", "$state", "searchFactory"];
+  SearchController.$inject = ["$scope", "$state", "searchService"];
 
-  function SearchController($scope, $state, searchFactory){
+  function SearchController($scope, $state, searchService){
 
     $scope.$state = $state;
 
@@ -15,7 +15,7 @@
     $scope.emergencies = ""
     $scope.error = "";
 
-    searchFactory.getCountries()
+    searchService.getCountries()
       .then(function(response) {
 
         $scope.countries = response.data;
@@ -30,7 +30,7 @@
 
     $scope.$watch("country", function(newVal, oldVal){
 
-      searchFactory.getEmergencyPhoneNumbers(newVal.Name)
+      searchService.getEmergencyPhoneNumbers(newVal.Name)
         .then(function(response) {
           
           $scope.emergencies = response.data;

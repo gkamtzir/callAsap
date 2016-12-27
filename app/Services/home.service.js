@@ -2,11 +2,11 @@
   "use strict";
 
   angular.module("callAsap")
-    .factory("homeFactory", homeFactory);
+    .factory("homeService", homeService);
 
-  homeFactory.$inject = ["$http"];
+  homeService.$inject = ["$http"];
 
-  function homeFactory($http) {
+  function homeService($http) {
 
     return {
 

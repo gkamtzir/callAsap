@@ -3,9 +3,9 @@
   angular.module("callAsap")
     .controller("HomeController", HomeController);
 
-  HomeController.$inject = ["$scope", "$state", "homeFactory", "searchFactory"];
+  HomeController.$inject = ["$scope", "$state", "homeService", "searchService"];
 
-  function HomeController($scope, $state, homeFactory, searchFactory){
+  function HomeController($scope, $state, homeService, searchService){
 
     $scope.ip = "";
     $scope.country = "";
@@ -13,7 +13,7 @@
     $scope.error = "";
     $scope.$state = $state;
 
-    homeFactory.getCountry($scope.ip)
+    homeService.getCountry($scope.ip)
       .then(function(response) {
 
         $scope.response = response.data;
@@ -24,14 +24,14 @@
 
         } else {
 
-          searchFactory.getCountry($scope.response.country)
+          searchService.getCountry($scope.response.country)
             .then(function(response) {
 
               $scope.country = response.data;
 
               if($scope.country){
 
-                searchFactory.getEmergencyPhoneNumbers($scope.response.country)
+                searchService.getEmergencyPhoneNumbers($scope.response.country)
                   .then(function(response) {
 
                     $scope.emergencies = response.data;
