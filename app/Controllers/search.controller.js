@@ -1,19 +1,19 @@
 (function(){
-  "use strict";
+  'use strict';
 
-  angular.module("callAsap")
-    .controller("SearchController", SearchController);
+  angular.module('callAsap')
+    .controller('SearchController', SearchController);
 
-  SearchController.$inject = ["$scope", "$state", "searchService"];
+  SearchController.$inject = ['$scope', '$state', 'searchService'];
 
   function SearchController($scope, $state, searchService){
 
     $scope.$state = $state;
 
-    $scope.country = "";
-    $scope.countries = "";
-    $scope.emergencies = ""
-    $scope.error = "";
+    $scope.country = '';
+    $scope.countries = '';
+    $scope.emergencies = ''
+    $scope.error = '';
 
     searchService.getCountries()
       .then(function(response) {
@@ -28,7 +28,7 @@
         }
       );
 
-    $scope.$watch("country", function(newVal, oldVal){
+    $scope.$watch('country', function(newVal, oldVal){
 
       searchService.getEmergencyPhoneNumbers(newVal.Name)
         .then(function(response) {

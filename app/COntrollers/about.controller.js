@@ -1,9 +1,9 @@
 (function(){
 
-  angular.module("callAsap")
-    .controller("AboutController", AboutController);
+  angular.module('callAsap')
+    .controller('AboutController', AboutController);
 
-  AboutController.$inject = ["$scope", "$state"];
+  AboutController.$inject = ['$scope', '$state'];
 
   function AboutController($scope, $state){
 

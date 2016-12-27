@@ -1,10 +1,10 @@
 (function() {
-  "use strict";
+  'use strict';
 
-  angular.module("callAsap")
-    .factory("homeService", homeService);
+  angular.module('callAsap')
+    .factory('homeService', homeService);
 
-  homeService.$inject = ["$http"];
+  homeService.$inject = ['$http'];
 
   function homeService($http) {
 
@@ -12,7 +12,7 @@
 
       getCountry: function(ip) {
 
-        return $http.get("http://ip-api.com/json/" + ip);
+        return $http.get('http://ip-api.com/json/' + ip);
 
       }
 

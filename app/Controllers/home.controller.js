@@ -1,16 +1,16 @@
 (function(){
 
-  angular.module("callAsap")
-    .controller("HomeController", HomeController);
+  angular.module('callAsap')
+    .controller('HomeController', HomeController);
 
-  HomeController.$inject = ["$scope", "$state", "homeService", "searchService"];
+  HomeController.$inject = ['$scope', '$state', 'homeService', 'searchService'];
 
   function HomeController($scope, $state, homeService, searchService){
 
-    $scope.ip = "";
-    $scope.country = "";
+    $scope.ip = '';
+    $scope.country = '';
 
-    $scope.error = "";
+    $scope.error = '';
     $scope.$state = $state;
 
     homeService.getCountry($scope.ip)
@@ -18,9 +18,9 @@
 
         $scope.response = response.data;
 
-        if($scope.response.status == "fail") {
+        if($scope.response.status == 'fail') {
 
-          $scope.error = "Sorry. We could figure out the country you are currently at.";
+          $scope.error = 'Sorry. We could figure out the country you are currently at.';
 
         } else {
 
@@ -46,7 +46,7 @@
 
               } else {
 
-                $scope.error = "Sorry. We don't have any information about your country's emergency phones.";
+                $scope.error = 'Sorry. We don't have any information about your country's emergency phones.';
 
               }
 
