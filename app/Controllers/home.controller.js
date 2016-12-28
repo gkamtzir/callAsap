@@ -46,7 +46,7 @@
 
               } else {
 
-                $scope.error = 'Sorry. We don't have any information about your country's emergency phones.';
+                $scope.error = 'Sorry. We don\'t have any information about your country\'s emergency phones.';
 
               }
 
