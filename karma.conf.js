@@ -20,9 +20,13 @@ module.exports = function(config) {
       './node_modules/angular-mocks/angular-mocks.js',
       './app/app.js',
       './app/Controllers/home.controller.js',
+      './app/Controllers/search.controller.js',
+      './app/Controllers/about.controller.js',
       './app/Services/home.service.js',
       './app/Services/search.service.js',
       './app/Controllers/home.controller.spec.js',
+      './app/Controllers/search.controller.spec.js',
+      './app/Controllers/about.controller.spec.js',
       './app/Services/home.service.spec.js',
       './app/Services/search.service.spec.js'
     ],
