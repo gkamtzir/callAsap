@@ -6,11 +6,11 @@
 
     beforeEach(angular.mock.module('callAsap'));
 
-    beforeEach(inject(function(_$rootScope_, _$controller_) {
+    beforeEach(inject(function(_$rootScope_, _$controller_, _homeService_) {
 
       $controller = _$controller_;
       scope = _$rootScope_.$new();
-      HomeController = $controller('HomeController', {$scope: scope});
+      HomeController = $controller('HomeController', {$scope: scope, homeService: _homeService_});
 
     }));
 
