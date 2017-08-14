@@ -17,7 +17,7 @@
 
         $scope.response = response.data;
 
-        if($scope.response.status == 'fail') {
+        if($scope.response.country_name == '') {
 
           $scope.error = 'Sorry. We could figure out the country you are currently at.';
 
@@ -30,7 +30,7 @@
 
               if($scope.country){
 
-                searchService.getEmergencyPhoneNumbers($scope.response.country)
+                searchService.getEmergencyPhoneNumbers($scope.response.country_name)
                   .then(function(response) {
 
                     $scope.emergencies = response.data;
