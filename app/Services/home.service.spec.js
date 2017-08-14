@@ -5,30 +5,23 @@
 
     var homeService, $q, $httpBackend;
 
-    var API = 'http://ip-api.com/json/';
+    var API = 'http://freegeoip.net/json/';
 
     var RESPONSE_SUCCESS = {
-      as: 'AS6866 Internet Services',
-      city: 'Thessaloniki',
-      country: 'Greece',
-      countryCode: 'GR',
-      isp: 'Cyta Hellas',
-      lat: 40.6403,
-      lon: 22.9439,
-      org: 'Cyta Hellas',
-      query: '78.87.150.155',
-      region: 'B',
-      regionName: 'Central Macedonia',
-      status: 'success',
-      timezone: 'Europe/Athens',
-      zip: ''
+        ip: '46.103.161.101',
+        country_code: 'GR',
+        country_name: 'Greece',
+        region_code: '',
+        region_name: '',
+        city: '',
+        zip_code: '',
+        time_zone: 'Europe/Athens',
+        latitude: 37.9667,
+        longitude: 23.7167,
+        metro_code: 0
     };
 
-    var RESPONSE_ERROR = {
-      message: 'invalid query',
-      query: '78.87.150.155a',
-      status: 'fail'
-    };
+    var RESPONSE_ERROR = '404 page not found';
 
     beforeEach(angular.mock.module('callAsap'));
 
@@ -49,23 +42,24 @@
     describe('getCountry()', function() {
 
       var result;
+      var errorResult;
 
       beforeEach(function() {
 
         result = {};
+        errorResult = '';
         spyOn(homeService, 'getCountry').and.callThrough();
 
       });
 
       it('should return a country when called with a valid ip', function() {
 
-         var search = '78.87.150.155';
-         $httpBackend.whenGET(API + search).respond(200, $q.when(RESPONSE_SUCCESS));
+         $httpBackend.whenGET(API).respond(200, $q.when(RESPONSE_SUCCESS));
 
          expect(homeService.getCountry).not.toHaveBeenCalled();
          expect(result).toEqual({});
 
-         homeService.getCountry(search)
+         homeService.getCountry()
            .then(function(response) {
              response.data.then(function(response) {
                  result = response;
@@ -74,23 +68,22 @@
 
          $httpBackend.flush();
 
-         expect(homeService.getCountry).toHaveBeenCalledWith(search);
-         expect(result.country).toEqual('Greece');
-         expect(result.regionName).toEqual('Central Macedonia');
-         expect(result.countryCode).toContain('GR');
-         expect(result.timezone).toEqual('Europe/Athens');
+         expect(homeService.getCountry).toHaveBeenCalledWith();
+         expect(result.country_name).toEqual('Greece');
+         expect(result.ip).toEqual('46.103.161.101');
+         expect(result.country_code).toContain('GR');
+         expect(result.time_zone).toEqual('Europe/Athens');
 
       });
 
       it('should return an error message when called with invalid ip', function() {
 
-          var search = '78.87.150.1555';
-          $httpBackend.whenGET(API + search).respond(200, $q.when(RESPONSE_ERROR));
+          $httpBackend.whenGET(API).respond(200, $q.when(RESPONSE_ERROR));
 
           expect(homeService.getCountry).not.toHaveBeenCalled();
-          expect(result).toEqual({});
+          expect(errorResult).toEqual('');
 
-          homeService.getCountry(search)
+          homeService.getCountry()
             .then(function(response) {
                 response.data.then(function(response) {
                     result = response;
@@ -99,9 +92,8 @@
 
           $httpBackend.flush();
 
-          expect(homeService.getCountry).toHaveBeenCalledWith(search);
-          expect(result.message).toEqual('invalid query');
-          expect(result.status).toEqual('fail');
+          expect(homeService.getCountry).toHaveBeenCalledWith();
+          expect(result).toEqual('404 page not found');
 
       });
 

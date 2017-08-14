@@ -10,9 +10,9 @@
 
     return {
 
-      getCountry: function(ip) {
+      getCountry: function() {
 
-        return $http.get('http://ip-api.com/json/' + ip);
+        return $http.get('http://freegeoip.net/json/');
 
       }
 

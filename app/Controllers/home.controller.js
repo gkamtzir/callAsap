@@ -7,13 +7,12 @@
 
   function HomeController($scope, $state, homeService, searchService){
 
-    $scope.ip = '';
     $scope.country = '';
 
     $scope.error = '';
     $scope.$state = $state;
 
-    homeService.getCountry($scope.ip)
+    homeService.getCountry()
       .then(function(response) {
 
         $scope.response = response.data;
@@ -24,7 +23,7 @@
 
         } else {
 
-          searchService.getCountry($scope.response.country)
+          searchService.getCountry($scope.response.country_name)
             .then(function(response) {
 
               $scope.country = response.data;
