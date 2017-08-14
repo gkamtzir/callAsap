@@ -12,7 +12,7 @@
 
     $scope.country = '';
     $scope.countries = '';
-    $scope.emergencies = ''
+    $scope.emergencies = '';
     $scope.error = '';
 
     searchService.getCountries()
@@ -32,7 +32,7 @@
 
       searchService.getEmergencyPhoneNumbers(newVal.Name)
         .then(function(response) {
-          
+
           $scope.emergencies = response.data;
 
         },
